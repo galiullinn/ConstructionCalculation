@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         
         xmlns:vm="clr-namespace:ConstructionCalculation.Client.ViewModels"
+        xmlns:cmd="clr-namespace:ConstructionCalculation.Client.Infrastructure.Commands"
         xmlns:local="clr-namespace:ConstructionCalculation.Client"
         Title="{Binding Title}" 
         Height="450" 
@@ -14,11 +15,15 @@
         <vm:MainWindowViewModel/>
     </Window.DataContext>
 
+    <Window.Resources>
+        <cmd:CloseApplicatonCommand x:Key="CloseApplicationCommand"/>
+    </Window.Resources>
+
     <DockPanel>
 
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="Файл">
-                <MenuItem Header="Выйти"/>
+                <MenuItem Header="Выйти" Command="{StaticResource CloseApplicationCommand}"/>
             </MenuItem>
             <MenuItem Header="Помощь">
                 <MenuItem Header="О программе"/>
