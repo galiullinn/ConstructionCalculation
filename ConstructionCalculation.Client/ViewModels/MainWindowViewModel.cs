@@ -4,12 +4,12 @@ namespace ConstructionCalculation.Client.ViewModels
 {
     internal class MainWindowViewModel : ViewModel
     {
-        private string _title = "Главная страница";
+        private string title = "Главная страница";
 
         public string Title
         {
-            get => _title;
-            set => Set(ref _title, value);
+            get => title;
+            set => Set(ref title, value);
         }
     }
 }
